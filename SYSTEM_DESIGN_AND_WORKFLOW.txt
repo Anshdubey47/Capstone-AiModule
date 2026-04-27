@@ -1,0 +1,225 @@
+Zero-Day Defense System — Code Explanation, Design, Architecture, Workflow
+=======================================================================
+
+Project goal
+------------
+Detect never-before-seen (“zero‑day”) activity by combining:
+  1) Statistical anomaly detection on network-flow features (perception)
+  2) Simple forecasting residual anomalies on traffic metrics (baseline)
+  3) Deep sequence modeling on raw HTTP request strings (web layer)
+Then fuse those signals into an “agentic” decision that can recommend
+mitigation actions (firewall block is dry-run by default).
+
+
+Folder overview
+---------------
+dataset/
+  Your provided datasets (CIC-IDS CSVs, CSIC CSV, IoT botnet CSV, UNSW-NB15 CSVs).
+
+src/zero_day_defense/
+  cli.py
+    Command-line interface: `train` and `run`.
+  pipeline.py
+    Orchestrates training, model loading, scoring, and agent decisions.
+  settings.py
+    Loads config and ensures artifacts directory exists.
+  config.yaml
+    Paths + hyperparameters + agent fusion weights + action templates.
+
+src/zero_day_defense/data/
+  loaders.py
+    Dataset loaders + cleaning (numeric coercion, inf/nan handling).
+
+src/zero_day_defense/models/
+  perception.py
+    Isolation Forest model with standardization and anomaly scoring.
+  forecasting.py
+    Linear regression baseline + residual anomaly scoring.
+  lstm_char.py
+    Character-level LSTM next-character prediction model for HTTP strings.
+
+src/zero_day_defense/agent/
+  lang_agent.py
+    LangChain-based “agent” runnable that fuses scores into a decision +
+    a recommended action list (offline-safe, deterministic).
+
+artifacts/
+  Output models + run results:
+    perception.pkl
+    forecasting.pkl
+    lstm_char.pt
+    lstm_char_meta.pkl
+    run_output.json
+
+
+System design: multi-layer architecture
+---------------------------------------
+This implementation matches your requested layered design:
+
+Layer 1 — Perception (Statistical / Unsupervised)
+  - Purpose:
+      Detect structural outliers without needing signatures.
+  - Implementation:
+      Isolation Forest + StandardScaler.
+  - Code:
+      `src/zero_day_defense/models/perception.py`
+  - Inputs:
+      IoT flow features from `dataset/IoT_Botnet_Traffic_Dataset/file.csv`
+      (numeric columns only; non-numeric fields are dropped/converted).
+  - Output:
+      `perception_anomaly` in [0,1], higher means more anomalous.
+
+Layer 2 — Forecasting (Baseline + Residual anomaly)
+  - Purpose:
+      Flag deviations from expected traffic behavior (early probing/shift).
+  - Implementation:
+      LinearRegression over a time index and an observed metric; anomaly is
+      residual magnitude scaled robustly and squashed to [0,1).
+  - Code:
+      `src/zero_day_defense/models/forecasting.py`
+  - Note:
+      The provided CSVs don’t include consistent timestamps, so this prototype
+      uses row index as a proxy “time” and a per-row count metric (flow_count).
+      If you later provide real timestamps, this layer can be upgraded to
+      bucket traffic per minute/hour.
+  - Output:
+      `forecasting_anomaly` in [0,1).
+
+Layer 3 — Deep sequence modeling (HTTP LSTM)
+  - Purpose:
+      Detect novel payload structures by learning “normal” request syntax.
+  - Implementation:
+      Character-level LSTM trained for next-character prediction. Anomaly is
+      the per-sequence cross-entropy loss converted to a robust score [0,1).
+  - Code:
+      `src/zero_day_defense/models/lstm_char.py`
+  - Inputs:
+      Raw HTTP request strings from CSIC dataset (`URL` column).
+      Labels are auto-detected to reliably find “Normal” rows, even if the
+      CSV has a leading unnamed label column.
+  - Output:
+      `lstm_anomaly` in [0,1).
+
+Layer 4 — Reasoning (Agentic fusion using LangChain)
+  - Purpose:
+      Interpret the combined evidence and produce a structured decision and
+      action plan, rather than acting on a single raw anomaly score.
+  - Implementation:
+      A LangChain runnable (“agent”) that fuses scores into:
+        - threat (bool)
+        - confidence (0..1)
+        - rationale (string)
+        - recommended_actions (list)
+  - Code:
+      `src/zero_day_defense/agent/lang_agent.py`
+  - Design choice:
+      This agent is offline-safe and deterministic (no external LLM required).
+      It still uses LangChain primitives (RunnableLambda) to match an “agentic”
+      framework shape. You can swap it for a real chat LLM later.
+  - Fusion:
+      fused = w_p * perception + w_f * forecasting + w_l * lstm
+      Compare fused to `agent.decision_threshold` from config.
+
+Layer 5 — Action (Mitigation / Response)
+  - Purpose:
+      Provide autonomous mitigation steps once the agent confirms a threat.
+  - Implementation:
+      Produces firewall command suggestions using Windows `netsh` template.
+      Execution is disabled/dry-run by default for safety.
+  - Code:
+      `src/zero_day_defense/pipeline.py` → `_execute_actions()`
+  - Output:
+      `actions_executed` includes the command and whether it was executed.
+
+
+Workflow: end-to-end execution
+------------------------------
+
+1) Configuration
+   - File: `src/zero_day_defense/config.yaml`
+   - Controls:
+       dataset_root, artifacts_dir
+       model hyperparameters (Isolation Forest / LSTM)
+       agent weights and decision threshold
+       mitigation command template (firewall)
+
+2) Training (`python -m zero_day_defense.cli train --dataset-root dataset`)
+   - File: `src/zero_day_defense/cli.py` calls `train_all(cfg)`.
+   - Steps performed in `train_all(cfg)` (pipeline.py):
+       a) Load IoT botnet dataset features (load_iot_botnet)
+       b) Train Isolation Forest on “normal” IoT records (attack == 0)
+       c) Train forecasting model baseline on a synthetic index
+       d) Load CSIC dataset and extract “Normal” HTTP request strings
+          (label column auto-detection happens in load_csic_http)
+       e) Train char-LSTM on normal request strings
+       f) Save artifacts to artifacts/:
+            perception.pkl
+            forecasting.pkl
+            lstm_char.pt
+            lstm_char_meta.pkl
+
+3) Detection + agentic reasoning (`python -m zero_day_defense.cli run ...`)
+   - File: `src/zero_day_defense/cli.py` calls `run_pipeline(cfg, ...)`.
+   - Steps performed in `run_pipeline()`:
+       a) Load saved models (or train if missing)
+       b) Build a small batch of “events” from IoT botnet CSV (first N rows)
+       c) Score events:
+            perception_scores = IsolationForest anomaly scores
+            forecasting_scores = regression residual anomaly scores
+            lstm_scores = LSTM loss-based anomaly scores on CSIC strings
+       d) Agent decision per event:
+            chain = build_langchain_agent(threshold, weights)
+            decision = decide_with_langchain(chain, context, scores, IPs)
+       e) Translate recommended actions into (dry-run) firewall commands
+       f) Write `artifacts/run_output.json` with decisions + evidence.
+
+
+How the provided datasets are used
+---------------------------------
+IoT_Botnet_Traffic_Dataset/file.csv
+  - Used for:
+      Perception layer training + runtime “event” scoring (has saddr/daddr/dport).
+
+csic_database/csic_database.csv
+  - Used for:
+      LSTM layer training and scoring on raw HTTP request strings.
+
+CIC-IDS_Network_Intrusion/*.csv and UNSW-NB15/*.csv
+  - Present in dataset/ and can be integrated into perception/forecasting
+    pipelines as additional sources.
+  - In this prototype, runtime scoring focuses on IoT flows (schema-consistent).
+    If you want perception to cover CIC-IDS too, you typically train a separate
+    model per schema (CIC vs IoT) or align/engineer a common feature set.
+
+
+What “agentic AI using LangChain” means here
+--------------------------------------------
+This repo uses LangChain to implement an agent-shaped decision layer that:
+  - Consumes structured evidence (scores + context)
+  - Produces structured outputs (decision + confidence + rationale + actions)
+  - Can be swapped to a real LLM chain later
+
+Current mode: deterministic (offline-safe)
+  - No API keys or model downloads are required for the “agent” itself.
+  - The “reasoning” is a transparent fusion rule with a clear rationale string.
+
+Optional upgrade (future)
+  - Replace RunnableLambda with a real chat model (OpenAI / local Ollama / etc.)
+  - Keep the same JSON schema output for actions and auditability.
+
+
+Key files to cite in a report
+-----------------------------
+Architecture + workflow:
+  - src/zero_day_defense/pipeline.py
+  - src/zero_day_defense/config.yaml
+
+Layer implementations:
+  - src/zero_day_defense/models/perception.py
+  - src/zero_day_defense/models/forecasting.py
+  - src/zero_day_defense/models/lstm_char.py
+  - src/zero_day_defense/agent/lang_agent.py
+
+Run output:
+  - artifacts/run_output.json
+
