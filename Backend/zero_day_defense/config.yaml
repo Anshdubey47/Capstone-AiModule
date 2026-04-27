@@ -1,0 +1,50 @@
+dataset_root: dataset
+artifacts_dir: artifacts
+
+cic_ids:
+  glob: "CIC-IDS_Network_Intrusion/*.csv"
+  label_column: "Label"
+  benign_label: "BENIGN"
+  drop_columns: []
+
+csic:
+  path: "csic_database/csic_database.csv"
+  label_column: "classification"
+  normal_label: "Normal"
+  text_column: "URL"
+
+iot_botnet:
+  path: "IoT_Botnet_Traffic_Dataset/file.csv"
+  label_column: "attack"
+  normal_value: 0
+
+forecasting:
+  time_bucket_seconds: 60
+  metric: "flow_count"
+
+perception:
+  contamination: 0.01
+  n_estimators: 200
+  random_state: 42
+
+lstm:
+  max_len: 256
+  batch_size: 128
+  epochs: 1
+  embedding_dim: 64
+  hidden_dim: 128
+  lr: 0.001
+  train_limit: 20000
+  eval_limit: 5000
+
+agent:
+  decision_threshold: 0.75
+  weights:
+    perception: 0.45
+    forecasting: 0.15
+    lstm: 0.40
+
+actions:
+  firewall:
+    enabled: false
+    command_template: "netsh advfirewall firewall add rule name=\"ZDD Block {ip}\" dir=in action=block remoteip={ip}"
