@@ -1,0 +1,904 @@
+{
+  "decisions": [
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "172.253.118.188",
+      "dst_port": 5228,
+      "confidence": 0.7047390331294029,
+      "scores": {
+        "perception": 0.399023250329834,
+        "forecasting": 0.7600981238944455,
+        "lstm": 0.9550957251639293
+      },
+      "rationale": "Analyzed process 'chrome.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "chrome.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "140.82.114.25",
+      "dst_port": 443,
+      "confidence": 0.6296109832297451,
+      "scores": {
+        "perception": 0.3520774840260438,
+        "forecasting": 0.6799149171627359,
+        "lstm": 0.8568405485004554
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "13.107.6.158",
+      "dst_port": 443,
+      "confidence": 0.5902003173818918,
+      "scores": {
+        "perception": 0.2934687053977623,
+        "forecasting": 0.7042765174260184,
+        "lstm": 0.7728557293218947
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "40.104.135.98",
+      "dst_port": 443,
+      "confidence": 0.5888336566651753,
+      "scores": {
+        "perception": 0.2557775885172731,
+        "forecasting": 0.6560420353162331,
+        "lstm": 0.8546813461620197
+      },
+      "rationale": "Analyzed process 'SearchHost.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "SearchHost.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "40.104.122.114",
+      "dst_port": 443,
+      "confidence": 0.569900655209819,
+      "scores": {
+        "perception": 0.28201970217175676,
+        "forecasting": 0.6879212913619445,
+        "lstm": 0.739760972095756
+      },
+      "rationale": "Analyzed process 'explorer.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "explorer.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "4.213.25.241",
+      "dst_port": 443,
+      "confidence": 0.5615866086763082,
+      "scores": {
+        "perception": 0.2158731612057555,
+        "forecasting": 0.6023359321134517,
+        "lstm": 0.8665507327097172
+      },
+      "rationale": "Analyzed process 'OneDrive.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "OneDrive.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "4.213.25.241",
+      "dst_port": 443,
+      "confidence": 0.556874942189065,
+      "scores": {
+        "perception": 0.20754905494538695,
+        "forecasting": 0.790978243523931,
+        "lstm": 0.6720975280978769
+      },
+      "rationale": "Analyzed process 'svchost.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.5466910144156352,
+      "scores": {
+        "perception": 0.34449243720430556,
+        "forecasting": 0.340781488311761,
+        "lstm": 0.9547991177308389
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "148.113.9.162",
+      "dst_port": 443,
+      "confidence": 0.5393797561049015,
+      "scores": {
+        "perception": 0.2578660007168374,
+        "forecasting": 0.6408243409992835,
+        "lstm": 0.7194489265985837
+      },
+      "rationale": "Analyzed process 'AnyDesk.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "AnyDesk.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "172.188.155.25",
+      "dst_port": 443,
+      "confidence": 0.5326572531652671,
+      "scores": {
+        "perception": 0.1363735370683595,
+        "forecasting": 0.7614769039798859,
+        "lstm": 0.700121318447556
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "150.171.28.11",
+      "dst_port": 443,
+      "confidence": 0.5215065493498664,
+      "scores": {
+        "perception": 0.36381515378623364,
+        "forecasting": 0.5619514452151292,
+        "lstm": 0.6387530490482364
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "4.213.133.109",
+      "dst_port": 443,
+      "confidence": 0.5181191437815532,
+      "scores": {
+        "perception": 0.33101506430347294,
+        "forecasting": 0.6733501264476841,
+        "lstm": 0.5499922405935024
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "40.104.134.34",
+      "dst_port": 443,
+      "confidence": 0.5165744208491115,
+      "scores": {
+        "perception": 0.2887307396390264,
+        "forecasting": 0.6104698489132965,
+        "lstm": 0.6505226739950116
+      },
+      "rationale": "Analyzed process 'explorer.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "explorer.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "185.199.109.133",
+      "dst_port": 443,
+      "confidence": 0.5032084061552053,
+      "scores": {
+        "perception": 0.2529741783599938,
+        "forecasting": 0.6639683361410491,
+        "lstm": 0.5926827039645732
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.5020108193373521,
+      "scores": {
+        "perception": 0.3745189978334622,
+        "forecasting": 0.2477328007517818,
+        "lstm": 0.8837806594268124
+      },
+      "rationale": "Analyzed process 'services.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "services.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "172.64.148.235",
+      "dst_port": 443,
+      "confidence": 0.49263739995359224,
+      "scores": {
+        "perception": 0.24243654021799305,
+        "forecasting": 0.753885680729646,
+        "lstm": 0.4815899789131376
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "150.171.27.11",
+      "dst_port": 443,
+      "confidence": 0.49182208301874986,
+      "scores": {
+        "perception": 0.1446367254510356,
+        "forecasting": 0.7862997804145102,
+        "lstm": 0.5445297431907038
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.4890580331827839,
+      "scores": {
+        "perception": 0.19133136067625411,
+        "forecasting": 0.36218484111451144,
+        "lstm": 0.9136578977575861
+      },
+      "rationale": "Analyzed process 'lsass.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "lsass.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "127.0.0.1",
+      "dst_port": 60731,
+      "confidence": 0.46955761563763193,
+      "scores": {
+        "perception": 0.3277299830391486,
+        "forecasting": 0.326705611947707,
+        "lstm": 0.7542372519260402
+      },
+      "rationale": "Analyzed process 'expressvpnd.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "expressvpnd.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.44683353009294907,
+      "scores": {
+        "perception": 0.18440043760747846,
+        "forecasting": 0.2308078119618472,
+        "lstm": 0.9252923407095215
+      },
+      "rationale": "Analyzed process 'Adobe Desktop Service.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "Adobe Desktop Service.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.4453028682047527,
+      "scores": {
+        "perception": 0.10575572283921846,
+        "forecasting": 0.3236054133764864,
+        "lstm": 0.9065474683985533
+      },
+      "rationale": "Analyzed process 'lsass.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "lsass.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.441893418290545,
+      "scores": {
+        "perception": 0.38635034150005,
+        "forecasting": 0.13768287957999303,
+        "lstm": 0.801647033791592
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.43993212059308573,
+      "scores": {
+        "perception": 0.17193830336487564,
+        "forecasting": 0.31315854015990874,
+        "lstm": 0.8346995182544729
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "127.0.0.1",
+      "dst_port": 49674,
+      "confidence": 0.43677529757242417,
+      "scores": {
+        "perception": 0.11779064957080959,
+        "forecasting": 0.2994871177804277,
+        "lstm": 0.8930481253660352
+      },
+      "rationale": "Analyzed process 'python3.13.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "python3.13.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "18.97.36.46",
+      "dst_port": 443,
+      "confidence": 0.4318914472973597,
+      "scores": {
+        "perception": 0.25449998750386593,
+        "forecasting": 0.6796530113983216,
+        "lstm": 0.3615213429898916
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "127.0.0.1",
+      "dst_port": 63432,
+      "confidence": 0.42449368798406056,
+      "scores": {
+        "perception": 0.31620690870374135,
+        "forecasting": 0.20649951501332112,
+        "lstm": 0.7507746402351192
+      },
+      "rationale": "Analyzed process 'python3.13.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "python3.13.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "185.199.110.215",
+      "dst_port": 443,
+      "confidence": 0.4201477815655485,
+      "scores": {
+        "perception": 0.2298012323909166,
+        "forecasting": 0.6574184397321109,
+        "lstm": 0.3732236725736179
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.4003414946803563,
+      "scores": {
+        "perception": 0.22596436308492138,
+        "forecasting": 0.2876077093653171,
+        "lstm": 0.6874524115908305
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "127.0.0.1",
+      "dst_port": 8000,
+      "confidence": 0.39474313674043593,
+      "scores": {
+        "perception": 0.25796674402238196,
+        "forecasting": 0.3014959448505177,
+        "lstm": 0.6247667213484079
+      },
+      "rationale": "Analyzed process 'chrome.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "chrome.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "127.0.0.1",
+      "dst_port": 49672,
+      "confidence": 0.39087433262212185,
+      "scores": {
+        "perception": 0.11700002623382182,
+        "forecasting": 0.14110713864854044,
+        "lstm": 0.9145158329840033
+      },
+      "rationale": "Analyzed process 'python3.13.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "python3.13.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.39056364644557323,
+      "scores": {
+        "perception": 0.15522066351231423,
+        "forecasting": 0.3279618197582537,
+        "lstm": 0.6885084560661517
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.3805278181287555,
+      "scores": {
+        "perception": 0.17246727931867573,
+        "forecasting": 0.3162752985948498,
+        "lstm": 0.652840876472741
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.3736329463680282,
+      "scores": {
+        "perception": 0.19686309435390664,
+        "forecasting": 0.2581509157758458,
+        "lstm": 0.6658848289743321
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.3666278587055503,
+      "scores": {
+        "perception": 0.15709263037868987,
+        "forecasting": 0.11470363416557093,
+        "lstm": 0.8280873115723901
+      },
+      "rationale": "Analyzed process 'chrome.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "chrome.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.36399860028069425,
+      "scores": {
+        "perception": 0.3691740396161225,
+        "forecasting": 0.15453728182623044,
+        "lstm": 0.5682844793997297
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.354893802097698,
+      "scores": {
+        "perception": 0.1041655497912477,
+        "forecasting": 0.11130297422259121,
+        "lstm": 0.8492128822792551
+      },
+      "rationale": "Analyzed process 'AnyDesk.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "AnyDesk.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.33893759791130823,
+      "scores": {
+        "perception": 0.2889881978310104,
+        "forecasting": 0.3829662404430485,
+        "lstm": 0.34485835545986565
+      },
+      "rationale": "Analyzed process 'spoolsv.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "spoolsv.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.3322285488420858,
+      "scores": {
+        "perception": 0.21749880923400047,
+        "forecasting": 0.3925768524304799,
+        "lstm": 0.386609984861777
+      },
+      "rationale": "Analyzed process 'expressvpnd.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "expressvpnd.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "140.82.112.21",
+      "dst_port": 443,
+      "confidence": 0.329417186991455,
+      "scores": {
+        "perception": 0.26385194627034125,
+        "forecasting": 0.7137756757280834,
+        "lstm": 0.010623938975940384
+      },
+      "rationale": "Analyzed process 'msedge.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "msedge.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.32209085315118,
+      "scores": {
+        "perception": 0.20245704830015088,
+        "forecasting": 0.10249910599431465,
+        "lstm": 0.6613164051590745
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "52.110.15.167",
+      "dst_port": 443,
+      "confidence": 0.3216246854685979,
+      "scores": {
+        "perception": 0.26028880622071016,
+        "forecasting": 0.5406548136772931,
+        "lstm": 0.1639304365077905
+      },
+      "rationale": "Analyzed process 'explorer.exe'. External connection detected. Behavior within normal baseline.",
+      "process": "explorer.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.30442821390281843,
+      "scores": {
+        "perception": 0.23374177335040627,
+        "forecasting": 0.30841772090787345,
+        "lstm": 0.37112514745017566
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.3035568798829512,
+      "scores": {
+        "perception": 0.2596937004695943,
+        "forecasting": 0.3644549910964653,
+        "lstm": 0.2865219480827941
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.3000461602526873,
+      "scores": {
+        "perception": 0.15525896043946116,
+        "forecasting": 0.30922414088564737,
+        "lstm": 0.4356553794329534
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "172.16.72.174",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2981295827229496,
+      "scores": {
+        "perception": 0.37500637316877905,
+        "forecasting": 0.3003172571184244,
+        "lstm": 0.2190651178816453
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.29245216813975783,
+      "scores": {
+        "perception": 0.35985539745236905,
+        "forecasting": 0.15759515058560392,
+        "lstm": 0.3599059563813005
+      },
+      "rationale": "Analyzed process 'wininit.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "wininit.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.28408479995497943,
+      "scores": {
+        "perception": 0.3120378991649046,
+        "forecasting": 0.2669814948996436,
+        "lstm": 0.27323500580038995
+      },
+      "rationale": "Analyzed process 'wininit.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "wininit.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.27143595492576883,
+      "scores": {
+        "perception": 0.20211505993916212,
+        "forecasting": 0.312413450250604,
+        "lstm": 0.29977935458754046
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2627577190471779,
+      "scores": {
+        "perception": 0.28987135760313565,
+        "forecasting": 0.2686707662919018,
+        "lstm": 0.22973103324649624
+      },
+      "rationale": "Analyzed process 'OneDrive.Sync.Service.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "OneDrive.Sync.Service.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2544696622718261,
+      "scores": {
+        "perception": 0.2954362389694646,
+        "forecasting": 0.1983089830191871,
+        "lstm": 0.26966376482682664
+      },
+      "rationale": "Analyzed process 'jhi_service.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "jhi_service.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "127.0.0.1",
+      "dst_port": 60730,
+      "confidence": 0.2231344768839267,
+      "scores": {
+        "perception": 0.3433221761815849,
+        "forecasting": 0.1160663951665393,
+        "lstm": 0.21001485930365593
+      },
+      "rationale": "Analyzed process 'expressvpnd.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "expressvpnd.exe",
+      "status": "ESTABLISHED"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2152334939696848,
+      "scores": {
+        "perception": 0.1666236339451585,
+        "forecasting": 0.3867697782455777,
+        "lstm": 0.09230706971831815
+      },
+      "rationale": "Analyzed process 'ollama.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "ollama.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2139318160359879,
+      "scores": {
+        "perception": 0.11454004049847251,
+        "forecasting": 0.1253039965754833,
+        "lstm": 0.401951411034008
+      },
+      "rationale": "Analyzed process 'WsToastNotification.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "WsToastNotification.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2096383769285455,
+      "scores": {
+        "perception": 0.14292394384526508,
+        "forecasting": 0.28797499308304075,
+        "lstm": 0.1980161938573307
+      },
+      "rationale": "Analyzed process 'python3.13.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "python3.13.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.2083970051814874,
+      "scores": {
+        "perception": 0.2528068439574598,
+        "forecasting": 0.35641448697820544,
+        "lstm": 0.015969684608796997
+      },
+      "rationale": "Analyzed process 'System'. Internal connection detected. Behavior within normal baseline.",
+      "process": "System",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "::",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.18178417960677237,
+      "scores": {
+        "perception": 0.28988407517519527,
+        "forecasting": 0.12045758468845302,
+        "lstm": 0.13501087895666875
+      },
+      "rationale": "Analyzed process 'svchost.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "svchost.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.18128851776651567,
+      "scores": {
+        "perception": 0.15043551204354372,
+        "forecasting": 0.22784449707010831,
+        "lstm": 0.165585544185895
+      },
+      "rationale": "Analyzed process 'services.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "services.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.1535677241271793,
+      "scores": {
+        "perception": 0.11332716081383837,
+        "forecasting": 0.33505031146517605,
+        "lstm": 0.01232570010252354
+      },
+      "rationale": "Analyzed process 'AnyDesk.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "AnyDesk.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "127.0.0.1",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.12439965404381426,
+      "scores": {
+        "perception": 0.24202085025757156,
+        "forecasting": 0.11814217189021604,
+        "lstm": 0.013035939983655154
+      },
+      "rationale": "Analyzed process 'ollama app.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "ollama app.exe",
+      "status": "LISTEN"
+    },
+    {
+      "threat": false,
+      "src_ip": "0.0.0.0",
+      "dst_ip": "0.0.0.0",
+      "dst_port": 0,
+      "confidence": 0.1161671262274168,
+      "scores": {
+        "perception": 0.11245054731537356,
+        "forecasting": 0.1105294883053099,
+        "lstm": 0.12552134306156693
+      },
+      "rationale": "Analyzed process 'spoolsv.exe'. Internal connection detected. Behavior within normal baseline.",
+      "process": "spoolsv.exe",
+      "status": "LISTEN"
+    }
+  ]
+}
