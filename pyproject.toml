@@ -8,7 +8,17 @@ version = "0.1.0"
 description = "Multi-layer zero-day detection + LangChain agent"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "joblib",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "torch",
+    "pyyaml",
+    "pydantic"
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
