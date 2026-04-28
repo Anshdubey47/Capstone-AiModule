@@ -1,1 +1,27 @@
-3
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zero-day-defense"
+version = "0.1.0"
+description = "Multi-layer zero-day detection + LangChain agent"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "joblib",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "torch",
+    "pyyaml",
+    "pydantic"
+]
+
+[[tool.setuptools]
+package-dir = {"" = "Backend"}
+
+[tool.setuptools.packages.find]
+where = ["Backend"]
