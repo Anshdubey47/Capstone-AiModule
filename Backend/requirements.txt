@@ -14,3 +14,4 @@ langchain-core>=0.2
 fastapi
 uvicorn
 joblib
+psutil>=5.9
