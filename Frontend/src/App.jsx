@@ -23,7 +23,7 @@ import AIInsights from './components/AIInsights';
 import ThreatCharts from './components/ThreatCharts';
 import EventAuditTable from './components/EventAuditTable';
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 const App = () => {
   const [isLive, setIsLive] = useState(false);
