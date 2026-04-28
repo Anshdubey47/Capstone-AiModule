@@ -20,9 +20,9 @@ dependencies = [
     "pydantic"
 ]
 
-[tool.setuptools]
-package-dir = {"" = "src"}
+[[tool.setuptools]
+package-dir = {"" = "Backend"}
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["Backend"]
 
