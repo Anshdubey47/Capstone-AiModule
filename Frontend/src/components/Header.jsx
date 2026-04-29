@@ -30,13 +30,7 @@ const Header = ({ isLive, onRun }) => {
           </div>
         </div>
         
-        <button className="secondary-button text-sm flex items-center gap-2">
-          <Layout size={16} /> Deploy
-        </button>
-        <button 
-          onClick={onRun}
-          className={`prime-button text-sm flex items-center gap-2 ${isLive ? 'bg-danger shadow-danger/20 hover:bg-red-600' : ''}`}
-        >
+       
           {isLive ? <Pause size={16} /> : <Play size={16} />}
           {isLive ? 'Stop Analysis' : 'Run Live Analysis'}
         </button>
